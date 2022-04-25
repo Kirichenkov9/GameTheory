@@ -130,9 +130,9 @@ def approximation_method_step(eps, n, a, b, c, d, e):
 
 def print_result(H,n,x, y, h, saddle_point, eps):
     print(f"N = {n}")
-
-    for i in H:
-        print(*["{:8.3f}".format(float(j)) for j in i])
+    if n <= 10:
+        for i in H:
+            print(*["{:8.3f}".format(float(j)) for j in i])
     
     if saddle_point:
         print("Has saddle point\nx = {:}, y = {:}, h = {:.3f}".format(x, y, float(saddle_point)))
